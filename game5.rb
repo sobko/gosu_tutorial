@@ -33,7 +33,18 @@ class Ball
 end
 class Paddle
   def initialize(window)
-    
+    @x = 20
+    @y = 200
+    @image = Gosu::Image.new(window, "paddle.png", false)
+  end
+  def draw
+    @image.draw(@x, @y, 1)
+  end
+  def move_down
+    @y += 7
+  end
+  def move_up
+    @y -= 7
   end
     
   
@@ -45,14 +56,22 @@ class GameWindow < Gosu::Window
     super 640,480,false
     self.caption = "Learning Gosu"
     @ball = Ball.new(self)
+    @left_paddle = Paddle.new(self)
   end
   
   def update
     @ball.move
+    if button_down?(Gosu::KbW)
+      @left_paddle.move_up
+    end
+    if button_down?(Gosu::KbZ)
+      @left_paddle.move_down
+    end
   end
   
   def draw
     @ball.draw  
+    @left_paddle.draw
   end
 end
 
