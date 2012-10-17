@@ -1,0 +1,20 @@
+Gosu Paddle Game Tutorial
+
+This tutorial takes you through a very simple game with Gosu.  It focuses on the Gosu library, rather than on Ruby. 
+
+Start with game1.rb.   This file shows an empty Gosu project.  The three methods in the GameWindow class are initialize, update, and draw.  The initialize method gets run once, when the window is instantiated.  The others run many times - once for each frame of the animation.  
+
+game2.rb shows a Ball class, but no instances of ball are created.  In addition, the Ball doesn't know much about the window - although the image has a reference to the window so it can draw itself there.
+
+In game3.rb, a single Ball is instantiated in the GameWindow class.  The ball is moved in the update method, and drawn in the draw method.
+
+In game4.rb, the Ball class is changed so that the ball bounces off the walls of the window.  To do this, the Ball is given a reference back to its window.  
+
+In game5.rb, The Paddle class is added, a paddle is created, and it is moved with the W and Z keys.  
+
+In game6.rb, a collision is added so that the ball "bounces" off the paddle.  This is not done very well, and lots more attention to detail is needed here.  This interaction will make or break the "game".
+
+
+
+
+
